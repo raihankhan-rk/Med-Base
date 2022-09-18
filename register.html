@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -28,7 +28,7 @@
             <img src="MedBase-4.png" alt="" class="logo">
             <form method="POST", action="">
                 {{ form.hidden_tag() }}
-                <h3>Register Here</h3>
+                <h3>Register</h3>
                 <div class="rest">
                 <label>Name</label>
                 {{ form.name }}
@@ -64,8 +64,7 @@
 .login{
     width:900px;
     height: 600px;
-    background-color: rgba(255,255,255,0.55);
-    backdrop-filter: blur(15px);
+    background-color: rgba(255,255,255);
     border-radius: 10px;
     padding: 5px;
     border: 2px solid white;
@@ -121,11 +120,12 @@ form *{
 }
 form h3{
     font-size: 32px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 10px;
     text-align: center;
     position: relative;
     bottom: 50px;
+
 }
 
 .rest{

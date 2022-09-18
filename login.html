@@ -29,11 +29,11 @@
         </div>
         
         <div class="login">
-            <div class="loginbg"></div>
+            
             <img src="MedBase-4.png" alt="" class="logo">
             <form method="POST", action="">
                 {{ form.hidden_tag() }}
-                <h3>Login Here</h3>
+                <h3>Login</h3>
                 <div class="rest">
                 <label>Email</label>
                 {{ form.email }}
@@ -79,18 +79,7 @@
     background-color: #e6feff;
     overflow-y: hidden;
 }
-.loginbg{
-    width:900px;
-    height: 600px;
-    background-color: rgb(255, 255, 255,0.4);
-    backdrop-filter: blur(15px);
-    border-radius: 10px;
-    border: 2px solid white;
-    
-    position: fixed;
-    top: 100px; 
-    left: 265px;
-}
+
 .login{
     width:900px;
     height: 600px;
@@ -151,7 +140,7 @@ form *{
 }
 form h3{
     font-size: 32px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 42px;
     text-align: center;
     position: relative;
