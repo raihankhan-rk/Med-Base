@@ -23,36 +23,45 @@
             </path>
         </svg>
         </div>
-        
+
         <div class="login">
             <img src="MedBase-4.png" alt="" class="logo">
             <form method="POST", action="">
-                {{ form.hidden_tag() }}
+                <input id="csrf_token" name="csrf_token" type="hidden" value="Ijc0OTM5OWE4ZGExYTcxZmMwN2U5MmNhOTBiOWE0ODg2ZjdmNzU2MmYi.YyaQkQ.ZHmIDbCJt-9XuYuvl4fn1YBzCRc">
                 <h3>Register</h3>
                 <div class="rest">
                 <label>Name</label>
-                {{ form.name }}
+                <input id="name" maxlength="20" minlength="4" name="name" placeholder="Name" required type="text" value="">
                 <label>Email</label>
-                {{ form.email }}
-                {% for field, errors in form.errors.items() %}
-            <small class="form-text text-muted ">
-                {{ ', '.join(errors) }}
-            </small>
-            {% endfor %}
+                <input id="email" name="email" placeholder="Email" required type="email" value="">
+                
                 <label>Password</label>
-                {{ form.password }}
-        
-                {{ form.submit }}
+                <input id="password" maxlength="20" minlength="4" name="password" placeholder="Password" required type="password" value="">
+
+                <input id="submit" name="submit" type="submit" value="Register">
                 <div class="social">
-                  <a href="{{ url_for('login') }}">Already have an account? Log In!</a>
+                  <a href="/login">Already have an account? Log In!</a>
                 </div>
             </form>
         </div>
     </div>
         <div class="vl"></div>
-        
+
 </body>
 <style>
+
+input[type=submit]{
+    border-radius: 10px;
+    background-color: #20696f;
+    border: none;
+    color: white;
+    transition: 0.2s all;
+}
+
+input[type=submit]:hover{
+    background-color: #378f97;
+}
+
     body{
     width: 100%;
     height: 100px;
@@ -70,7 +79,7 @@
     border: 2px solid white;
     box-shadow: 8px 8px 10px rgba(0,0,0,0.4);
     position: fixed;
-    top: 100px; 
+    top: 100px;
     left: 265px;
 }
 
@@ -104,12 +113,12 @@ form{
     width: 406px;
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 380px;
+    top: 330px;
     left: 695px;
     border-radius: 10px;
     color: #000000;
-    padding: 50px 35px;
-    
+    padding: 80px 60px;
+
 }
 form *{
     font-family: 'Montserrat';
@@ -117,11 +126,12 @@ form *{
     letter-spacing: 0.5px;
     outline: none;
     border: none;
+    padding: 0px;
 }
 form h3{
     font-size: 32px;
     font-weight: 600;
-    line-height: 10px;
+    line-height: 5px;
     text-align: center;
     position: relative;
     bottom: 40px;
@@ -130,7 +140,7 @@ form h3{
 
 .rest{
     position: absolute;
-    top: 80px;
+    top: 50px;
 }
 
 .logo{
@@ -141,9 +151,9 @@ form h3{
 
 label{
     display: block;
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: 500;
+    position: relative;
+    top: 30px;
+
 }
 input{
     display: block;

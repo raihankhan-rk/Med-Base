@@ -89,7 +89,7 @@
     border-radius: 50%;
     position: absolute;
     top: 150px;
-    right: 150px;
+    right: 0px;
     filter: blur(60px);
 }
 
