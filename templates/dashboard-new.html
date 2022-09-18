@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <div>
+        <svg viewBox="0 0 500 500" class="svg1"
+
+            preserveAspectRatio="xMinYMin meet" class="gradient">
+
+            <path d="M0, 200 C210, 300 260,
+                0 600, 90 L500, 00 L0, 0 Z"
+                style="stroke:none;" class="gradient" fill="#113F67">
+            </path>
+        </svg>
+        </div>
+        <div>
+        <svg viewBox="0 0 500 500" style="z-index: -2;" preserveAspectRatio="xMinYMin meet" class="svg2">
+
+            <path d="M0, 250 C230, 275 270,
+                0 650, 120 L550, 00 L0, 0 Z"
+                style="stroke:none;" class="gradient" fill="#226597">
+            </path>
+        </svg>
+
+        </div>
+
+        <div>
+          <svg viewBox="0 0 500 500" style="z-index: -3;" preserveAspectRatio="xMinYMin meet" class="svg3">
+
+              <path d="M0, 270 C240, 270 300,
+                  0 650, 150 L550, 00 L0, 0 Z"
+                  style="stroke:none;" class="gradient" fill="#92c3f0">
+              </path>
+          </svg>
+
+          </div>
+
+<div class="taskbar"></div>
+
+<div class="card">
+        <div class="top">
+          <h2 class="name">Chinnaswami Iyer</h2>
+          <img class="circle-img"
+            src="https://cdn-icons-png.flaticon.com/512/219/219986.png"
+            alt="avatar_img"
+          />
+</div>
+        <div class="bottom">
+          <p class="info">XXXX XXXX XXXX</p>
+          <p class="info">+91 8961675822</p>
+        </div>
+</div>
+<section class="section">
+
+  <!--for demo wrap-->
+  <div class="dash">
+  <h1 class="head">Dashboard</h1>
+
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <form action="/upload" method="post" enctype="multipart/form-data ">
+          <input type="file" class="shit" name="file" vale="">
+          <input type="submit" value="Upload">
+          <div class="bg"></div>
+        </form>
+        <hr>
+        <tr>
+          <th>Title</th>
+          <th>Uploaded on</th>
+          <th>Documents</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+      {% for title, timestamp, cid in zipped_data %}
+        <tr>
+          <td>{{title}}</td>
+          <td>{{timestamp}}</td>
+          <td><button class="cid">Show</button><button class="cid">Download</button></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+<div class="container2">
+
+  <div class="calendar-container">
+    <div class="ring-left"></div>
+    <div class="ring-right"></div>
+    <header>
+
+      <div id="day" onload="showDate()"></div>
+
+    </header>
+
+ </div>    <!-- end calendar-container -->
+
+</div> <!-- end container -->
+<script>
+  function showDate(){
+    var date = new Date();
+    var d = date.getDate();
+    var mo = date.getMonth();
+    var y = date.getFullYear();
+
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+    var month= months[mo];
+
+    var fdate = d + "th " + month + " "+ y;
+
+    document.getElementById("day").textContent= fdate;
+
+
+  }
+
+  showDate();
+</script>
+<script>
+  function showTime(){
+    var date = new Date();
+
+    var h = date.getHours(); // 0 - 23
+    var m = date.getMinutes(); // 0 - 59
+    var s = date.getSeconds(); // 0 - 59
+    var session = "AM";
+
+    if(h == 0){
+        h = 12;
+    }
+
+    if(h > 12){
+        h = h - 12;
+        session = "PM";
+    }
+
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+
+    var time = h + ":" + m + ":" + s + " " + session;
+    // document.getElementById("MyClockDisplay").innerText = time;
+    document.getElementById("MyClockDisplay").textContent = time;
+
+    // document.getElementById("month").textContent= mo;
+    setTimeout(showTime, 1000);
+
+}
+
+showTime();
+</script>
+
+  <button class="btn-4">
+    <a href="{{ url_for('logout') }}" class="logout" >Logout</a>
+  </button>
+
+</div>
+</body>
+
+
+<style media="screen">
+
+.ring-left,
+.ring-right {
+	position: absolute;
+	top: 80px;
+  z-index: +1;
+}
+
+.ring-left { left: 2em; }
+.ring-right { right: 2em; }
+
+.ring-left:before,
+.ring-left:after,
+.ring-right:before,
+.ring-right:after {
+	background: #fff;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+	box-shadow: 0 3px 1px rgba(0, 0, 0, .3), 0 -1px 1px rgba(0, 0, 0, .2);
+	content: "";
+	display: inline-block;
+	margin: 8px;
+	height: 32px;
+	width: 8px;
+}
+
+@use postcss-preset-env;
+
+.container2{
+  position: absolute;
+  top: 350px;
+  right: 50px;
+  box-shadow: 6px 6px 10px rgba(0,0,0,0.5);
+  border-radius: 1em;
+}
+
+
+.calendar-container {
+	position: relative;
+	width: 400px;
+}
+
+.calendar-container header {
+	border-radius: 1em;
+	background-color: #1E56A0;
+  backdrop-filter: blur(10px);
+	color: #ffffff;
+	padding: 1em 1em;
+}
+
+#day {
+	font-size: 2.5em;
+	font-weight: 400;
+	line-height: 1em;
+  display: block;
+  text-align: center;
+  padding: 15px;
+}
+
+
+
+
+.clock {
+  display: block;
+  text-align: justify;
+    position: absolute;
+    top:505px;
+    right: -150px;
+    transform: translateX(-50%) translateY(-50%);
+    color: #113F67;
+    font-size: 45px;
+    font-family: Orbitron;
+    letter-spacing: 7px;
+    font-family: 'Montserrat';
+    background-color: rgba(255,255,255, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 1em;
+    height: 63px;
+    width: 370px;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    box-shadow: 6px 6px 10px rgba(0,0,0,0.5);
+
+
+}
+
+.head{
+  padding-bottom:20px;
+  font-weight: 400;
+  font-size: 35px;
+}
+
+.bg{
+  height: 39px;
+  width: 160px;
+  background-color: white;
+  position: fixed;
+  top: 15px;
+  left: 160px;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+.svg1 {
+      filter: drop-shadow(3px 6px 5px rgb(0 0 0 / 0.4));
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: move 1s;
+      z-index: -1;
+  }
+
+  .svg2 {
+      filter: drop-shadow(3px 6px 5px rgb(0 0 0 / 0.4));
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: move2 2s;
+
+  }
+
+  .svg3 {
+      filter: drop-shadow(3px 6px 5px rgb(0 0 0 / 0.4));
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: move3 2.5s;
+
+  }
+  @keyframes move2{
+    0%{top: -325px;}
+    10%{top: -325px;}
+    100%{top: 0px;}
+  }
+  @keyframes move3{
+    0%{top: -350px;}
+    10%{top: -350px;}
+    100%{top: 0px;}
+  }
+  @keyframes move{
+
+    0%{top: -300px;}
+    100%{top: 0px;}
+  }
+
+.dash{
+  margin-top: 50px;
+}
+
+.navbar{
+  background-color: #3d3d3d;
+  backdrop-filter: blur(4px);
+    width: 99.75%;
+    height: 60px;
+    border-bottom: white solid 2px;
+
+}
+
+.shit{
+  border: none;
+  color: black;
+  padding: 0px;
+  text-decoration: none;
+  margin: auto;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Montserrat';
+}
+
+.shit::file-selector-button{
+  background-color: #226597;
+  padding: 16px 32px;
+  margin: 10px 30px 0px 10px;
+  border-radius: 5px;
+  border: #92c3f0;
+  color: white;
+  font-family: 'Montserrat';
+  transition: all 0.5s;
+}
+
+.shit::file-selector-button:hover{
+  background-color:#4e89b6;
+}
+
+
+
+input[type=submit]{
+  background-color: #226597;
+  padding: 16px 32px;
+  margin-left: 460px;
+  border-radius: 5px;
+  border: #92c3f0;
+  color: white;
+  font-family: 'Montserrat';
+  transition: all 0.5s;
+}
+
+input[type=submit]:hover{
+  /* background: linear-gradient( to right, #ff512f, #f09819 ); */
+  background-color:#4e89b6;
+}
+
+
+    h1{
+  font-size: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+table{
+  width:100%;
+  table-layout: fixed;
+
+}
+.tbl-header{
+  background-color: rgba(255,255,255,0.5);
+  backdrop-filter: blur(10px);
+  backdrop-filter: blur(3px);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.4);
+ }
+.tbl-content{
+  height:300px;
+  overflow-x:auto;
+  margin-top: 0px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.4);
+}
+th{
+  padding: 20px 15px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+
+}
+td{
+  padding: 15px;
+  text-align: center;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 12px;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.5);
+
+}
+
+
+/* demo styles */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+    margin: 0px;
+  background-color: #d8ebff;
+  font-family: 'Montserrat';
+  overflow-y: hidden;
+}
+
+.background{width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 620px;
+    right: -147px;
+}
+
+
+.shape:first-child {
+    background: linear-gradient( #1845ad, #23a2f6 );
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    margin-left: 295px;
+    margin-top: -102px;
+}
+
+.shape:last-child {
+    background: linear-gradient( to right, #ff512f, #f09819 );
+    margin-right: -327px;
+    margin-bottom: 200px;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+}
+
+.card {
+    border: white 1px solid;
+    border-radius: 25px;
+    position: absolute;
+    top: 85px;
+    right: 73px;
+    /* padding: 25px 15px; */
+    background-color: rgba(211, 211, 211, 0.2);
+    backdrop-filter: blur(4px);
+    margin: 50px 0;
+    height: 200px;
+    width: 350px;
+    text-align: left;
+    align: center;
+    box-shadow: 1.5px 2px 4px rgb(48 48 48);
+}
+
+.section {
+    margin-right: 500px;
+}
+
+
+.top {
+
+  border-radius: 25px 25px 0 0;
+  height: 90px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+  position: relative;
+  top: -31px;
+  left: 0;
+  /* display: flex; */
+}
+.name {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 9% 20px 0;
+  padding-top: 30px;
+  position: relative;
+  display: flex;
+  flex: 1;
+}
+.circle-img {
+  border-radius: 50%;
+  border: 7px solid #fff;
+  position: relative;
+  left: 210px;
+  bottom: 25px;
+  width: 110px;
+  z-index: +1;
+}
+
+.bottom {
+  margin-top: -30px;
+  margin-left: 20px;
+}
+
+.info {
+
+  margin: 20px 0;
+  color: #ffffff;
+}
+
+section{
+  margin: 50px;
+}
+
+.btn-4 {
+  background-color: rgb(255, 0, 0);
+    color: #fff;
+display:flex;
+justify-content: center;
+display: block;
+margin: 100px auto ;
+  line-height: 42px;
+  padding: 7px 25px 7px 25px;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+
+.logout{
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-size: 1.5em;
+    color: white;
+    padding: 7px 25px 7px 25px;
+}
+.btn-4:hover{
+  background-color: rgb(255, 93, 93);
+
+}
+
+
+.btn-4:before,
+.btn-4:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+   box-shadow:  4px 4px 6px 0 rgba(255,255,255,.9),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2),
+    inset -4px -4px 6px 0 rgba(255,255,255,.9),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+
+}
+.btn-4:before {
+  height: 0%;
+  width: .1px;
+
+}
+.btn-4:after {
+  width: 0%;
+  height: .1px;
+
+}
+.btn-4:hover:before {
+  height: 100%;
+
+}
+.btn-4:hover:after {
+  width: 100%;
+
+}
+.btn-4 span:before,
+.btn-4 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.9),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2),
+    inset -4px -4px 6px 0 rgba(255,255,255,.9),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+
+}
+.btn-4 span:before {
+  width: .1px;
+  height: 0%;
+
+}
+.btn-4 span:after {
+  width: 0%;
+  height: .1px;
+
+}
+.btn-4 span:hover:before {
+  height: 100%;
+
+}
+.btn-4 span:hover:after {
+  width: 100%;
+
+}
+button {
+  margin: 20px;
+
+}
+
+.made-with-love {
+  margin-top: 40px;
+  padding: 10px;
+  clear: left;
+  text-align: center;
+  font-size: 10px;
+  font-family: arial;
+  color: #fff;
+}
+.made-with-love i {
+  font-style: normal;
+  color: #F50057;
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+}
+.made-with-love a {
+  color: #fff;
+  text-decoration: none;
+}
+.made-with-love a:hover {
+  text-decoration: underline;
+}
+
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.cid{
+  background-color: #71abe1;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+  font-family: 'Montserrat';
+}
+
+.cid:hover{
+  background-color: #2876b2;
+}
+
+
+</style>
+</html>

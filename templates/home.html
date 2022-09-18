@@ -1,15 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-	<h1>Login Authentication System in Flask</h1>
-  <a href="{{ url_for('login') }}">Login Page</a><br>
-  <a href="{{ url_for('register') }}">Register Page</a><br>
-  </body>
+    <link rel="stylesheet" href="styless.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>MedBase</title>
+</head>
+<body>
+
+   <div class="navbar">
+    <center><img src="{{url_for('static', filename='MedBase-4.png')}}" alt="" class="navbarp"></center>
+
+   </div>
+
+          <div class="shape1"></div>
+          <div class="shape2"></div>
+          <div class="shape3"></div>
+          <div class="shape4"></div>
+          <div class="shape5"></div>
+          <div class="shape6"></div>
+    <div class="card">
+        <center><h1><span>Med</span>Base</h1></center>
+        <center><h3>Medical records <b class="any">ANYTIME</b>, <b class="any1">ANYWHERE!</b></h3></center>
+        <center><a href="{{ url_for('login') }}"><button>Try Now!</button></a></center>
+    </div>
+
+    <a> <div class="about">
+        <h2><center>About Us</center></h2>
+        <p class="fp">MedBase is an online platform to maintain medical records of a patient. It runs on the IPFS - InterPlanetary File System protocol making it accessible even from a different planet!
+             It's website form allows all users to use our services irrespective of the device they are using.
+            </p>
+            <br>
+            <img src="{{url_for('static', filename='1.png')}}" alt="" class="first">
+        <p class="sp">Every registered user gets a unique 12 digit generated ID which can be used for accessing all the medical records of the person from birth till date from anywhere across the globe. </p>
+        <br>
+        <img src="{{url_for('static', filename='3.png')}}" alt="" class="second">
+        <p class="tp">Once uploaded the document cannot be removed: This ensures that a document cannot be duplicated but demands utmost caution of the uploader before uploading any document. </p>
+        <img src="{{url_for('static', filename='13.png')}}" alt="" class="third">
+    </div>
+</a>
+    <div class="teams">
+        <h2><center>Our Team</center></h2>
+        <br>
+        <br>
+        <br>
+        <div class="raihan">
+            <div class="border"><img src="{{url_for('static', filename='raihan.png')}}" alt="" ></div>
+            <h4>Raihan Khan</h4>
+            <h5>Backend Developer</h5>
+        </div>
+        <div class="aritra">
+            <div class="border"><img src="{{url_for('static', filename='aritra.png')}}" alt="" ></div>
+            <h4>Aritra Roy</h4>
+            <h5>Backend Developer</h5>
+        </div>
+        <div class="risav">
+            <div class="border"><img src="{{url_for('static', filename='risav.png')}}" alt="Risav"></div>
+            <h4>Risavdeb Patra</h4>
+            <h5>Frontend Developer</h5></div>
+        <div class="sayak">
+            <div class="border"><img src="{{url_for('static', filename='sayak.png')}}" alt="Sayak"></div>
+            <h4>Sayak Sarkar</h4>
+            <h5>Frontend Developer</h5>
+        </div>
+    </div>
+    <div class="bottom">
+        <h5>©Zephyrus</h5>
+    </div>
+</body>
+<style>
+  .navbar{
+    height: 80px;
+    width: 100%;
+    background-color: rgba(0, 77, 82, 0.9);
+    backdrop-filter: blur(15px);
+    top: 0px;
+    z-index: +1;
+}
+
+.navbarp{
+    width: 80px;
+    padding: 1px;
+}
+
+
+.card{
+    width: 1000px;
+    height: 400px;
+    background-color: rgba(25, 25, 25, 0.4);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+
+    margin: 212px 210px 213px 210px;
+    border: 2px solid white;
+}
+
+.shape1{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, #2d9da4,#6ce3c5);
+    position: absolute;
+    top: 70px;
+    left: 50px;
+    filter: blur(70px);
+
+}
+
+.shape2{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, #6ce3c5,#2d9da4);
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    filter: blur(50px);
+}
+
+.shape3{
+    background-color: #ffec70;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 100px;
+    right: 250px;
+    filter: blur(60px);
+}
+
+.shape4{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #6ce3c5;
+    position: absolute;
+    top: 80px;
+    left: 350px;
+    filter: blur(70px);
+
+}
+
+.shape5{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #6ce3c5;
+    position: absolute;
+    top: 520px;
+    left: 150px;
+    filter: blur(80px);
+
+}
+
+.shape6{
+    background-color: #ffec70;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    filter: blur(60px);
+}
+
+body{
+    margin: 0px;
+    background-color: #07646b ;
+}
+
+b{color: #ffec70;}
+span{
+    color: white;
+}
+
+h1{
+    padding: 60px 30px 0px 0px;
+    font-size: 6em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: #6ce3c5;
+}
+
+h3{
+    padding: 20px 30px 0px 0px;
+    font-size: 1.9em;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    margin: 0px;
+    color: white;
+}
+
+.first{
+    width: 500px;
+    position: absolute;
+    right: 70px;
+    top: 130px;
+}
+
+
+
+.about{
+    width: 100%;
+    height: 1500px;
+    background-color: rgba(255,255,255);
+    backdrop-filter: blur(15px);
+    border-radius: 40px;
+    margin: 0px;
+    /* position: absolute;
+    top: 825px; */
+    box-shadow: 0px -3px 9px rgba(0,0,0,0.4);
+}
+
+h2{
+    margin: 10px;
+    padding-top: 100px;
+    font-family: 'Montserrat';
+    font-size: 3.5em;
+    color: #20696f;
+}
+
+button{
+    font-size: 20px;
+    font-family: 'Montserrat';
+    padding: 15px 40px 15px 40px;
+    background-color: #318189;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    margin-top: 45px;
+    transition: 0.3s all;
+}
+
+button:hover{
+    background-color: #2d9da4;
+}
+
+.fp{
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 130px;
+}
+
+.sp{
+    position: absolute;
+    margin-left: 700px;
+    margin-top: 550px;
+}
+
+.tp{
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 940px;
+}
+
+p{
+    width: 40%;
+    font-size: 1.4em;
+    font-family: 'Montserrat';
+    color:#2d9da4;
+}
+
+.second{
+    width: 500px;
+    position: absolute;
+    bottom: 500px;
+    left: 70px;
+}
+
+.third{
+    width: 500px;
+    position: absolute;
+    right: 70px;
+    bottom: 100px;
+}
+
+.teams{
+    width: 1440px;
+    height: 1200px;
+    background-color: rgba(230, 254, 255);
+    border-radius: 40px;
+
+}
+
+.raihan{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 305px;
+    margin-bottom: 5px;
+    float: left;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+
+    background-image: url({{url_for('static', filename='card_bg.png')}});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.raihan img{
+    border-width: 30px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 20% 10%;
+    border-radius: 50%;
+}
+
+.raihan h4{
+    padding: 0px 30px 0px 30px;
+    font-size: 2em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: #20696f;
+}
+
+.raihan h5{
+    padding: 10px 30px 0px 30px;
+    font-size: 1em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: grey;
+}
+
+
+.aritra{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    margin-right: 305px;
+    margin-bottom: 5px;
+    float: right;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+
+    background-image: url({{url_for('static', filename='card_bg.png')}});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aritra img{
+    border-width: 30px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 20% 10%;
+    border-radius: 50%;
+}
+
+.aritra h4{
+    padding: 0px 30px 0px 30px;
+    font-size: 2em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: #20696f;
+}
+
+.aritra h5{
+    padding: 10px 30px 0px 30px;
+    font-size: 1em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: grey;
+}
+
+.risav{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 305px;
+    margin-top: 5px;
+    float: left;
+    margin-top: 20px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+
+    background-image: url({{url_for('static', filename='card_bg.png')}});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.risav img{
+    border-width: 30px;
+    width: 200px;
+    height: auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 20% 10%;
+    border-radius: 50%;
+}
+
+.risav h4{
+    padding: 0px 30px 0px 30px;
+    font-size: 2em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: #20696f;
+}
+
+.risav h5{
+    padding: 10px 30px 0px 30px;
+    font-size: 1em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: grey;
+}
+
+.sayak{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    margin-right: 305px;
+    margin-top: 5px;
+    float: right;
+    margin-top: 20px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+
+    background-image: url({{url_for('static', filename='card_bg.png')}});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom{
+    height: 200px;
+    background-color: #20696f;
+    width: 100%;
+    /* border-top-left-radius: 20px;
+    border-top-right-radius: 20px; */
+}
+
+.sayak img{
+    border-width: 30px;
+    width: 200px;
+    height: auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 20% 10%;
+    border-radius: 50%;
+}
+
+.sayak h4{
+    padding: 0px 30px 0px 30px;
+    font-size: 2em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: #20696f;
+}
+
+.sayak h5{
+    padding: 10px 30px 0px 30px;
+    font-size: 1em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: grey;
+}
+
+.border{
+    margin-bottom: 20px;
+    border-radius: 50%;
+    /* background: #20696f; */
+    background: rgb(32,105,111);
+    background: linear-gradient(0deg, rgba(32,105,111,1) 0%, rgba(50,181,189,1) 49%, rgba(32,105,111,1) 99%);
+    width: 220px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.svg1 {
+    filter: drop-shadow(3px 6px 5px rgb(0 0 0 / 0.4));
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: move 1s;
+    z-index: -1;
+}
+
+.svg2 {
+    filter: drop-shadow(3px 6px 5px rgb(0 0 0 / 0.4));
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: move2 2s;
+
+}
+
+.svg3 {
+    filter: drop-shadow(3px 6px 5px rgb(0 0 0 / 0.4));
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: move3 2.5s;
+
+}
+@keyframes move2{
+  0%{top: -350px;}
+  10%{top: -350px;}
+  100%{top: 0px;}
+}
+@keyframes move3{
+  0%{top: -400px;}
+  10%{top: -400px;}
+  100%{top: 0px;}
+}
+@keyframes move{
+
+  0%{top: -325px;}
+  100%{top: 0px;}
+}
+
+h5{
+   margin: 0px;
+   padding: 90px 680px ;
+   color: white;
+   font-family: 'Montserrat';
+   font-size: 1.2em;
+}
+</style>
 </html>

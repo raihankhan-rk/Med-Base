@@ -101,7 +101,7 @@ def login():
             flash("This email is not registered. Try Signing Up!")
 
 
-    return render_template('login.html', form=form)
+    return render_template('login-new.html', form=form)
 
 @app.route('/register', methods=["GET", "POST"])
 def register():
@@ -117,7 +117,7 @@ def register():
         db.session.commit()
         return redirect(url_for('login'))
 
-    return render_template('register.html', form=form)
+    return render_template('register-new.html', form=form)
 
 @app.route('/upload', methods=["GET", "POST"])
 @login_required
