@@ -1,7 +1,7 @@
 .navbar{
     height: 80px;
     width: 100%;
-    background-color: rgba(0, 77, 82, 0.9);
+    background-color: rgba(0, 48, 52, 0.9);
     backdrop-filter: blur(15px);
     top: 0px;
     z-index: +1;
@@ -12,6 +12,12 @@
     padding: 1px;
 }
 
+/* body{
+    background-image: url("bg2.png");
+    background-color: #20696f;
+    background-repeat: none;
+    height: auto;
+} */
 
 .card{
     width: 1000px;
@@ -96,6 +102,8 @@
 body{
     margin: 0px;
     background-color: #07646b ;
+    /* background: rgb(32,105,111);
+    background: linear-gradient(0deg, rgba(32,105,111,1) 0%, rgba(52,199,208,1) 74%, rgba(242,254,255,1) 100%); */
 }
 
 b{color: #ffec70;}
