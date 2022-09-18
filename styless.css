@@ -218,29 +218,147 @@ p{
     height: 400px;
     background-color: white;
     border-radius: 20px;
-    margin-left: 310px;
+    margin-left: 305px;
+    margin-bottom: 5px;
     float: left;
     box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
 
+    background-image: url("card_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.raihan img{
+    border-width: 30px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 20% 10%;
+    border-radius: 50%;
+}
+
+.raihan h4{
+    padding: 0px 30px 0px 30px;
+    font-size: 2em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: #20696f;
+}
+
+.raihan h5{
+    padding: 10px 30px 0px 30px;
+    font-size: 1em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: grey;
+}
+
+
 .aritra{
     width: 400px;
     height: 400px;
     background-color: white;
     border-radius: 20px;
-    margin-right: 310px;
+    margin-right: 305px;
+    margin-bottom: 5px;
     float: right;
     box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+
+    background-image: url("card_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-.me{
+
+.aritra img{
+    border-width: 30px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 20% 10%;
+    border-radius: 50%;
+}
+
+.aritra h4{
+    padding: 0px 30px 0px 30px;
+    font-size: 2em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: #20696f;
+}
+
+.aritra h5{
+    padding: 10px 30px 0px 30px;
+    font-size: 1em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: grey;
+}
+
+.risav{
     width: 400px;
     height: 400px;
     background-color: white;
     border-radius: 20px;
-    margin-left: 310px;
+    margin-left: 305px;
+    margin-top: 5px;
     float: left;
     margin-top: 20px;
     box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+
+    background-image: url("card_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.risav img{
+    border-width: 30px;
+    width: 200px;
+    height: auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 20% 10%;
+    border-radius: 50%;
+}
+
+.risav h4{
+    padding: 0px 30px 0px 30px;
+    font-size: 2em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: #20696f;
+}
+
+.risav h5{
+    padding: 10px 30px 0px 30px;
+    font-size: 1em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: grey;
 }
 
 .sayak{
@@ -248,10 +366,21 @@ p{
     height: 400px;
     background-color: white;
     border-radius: 20px;
-    margin-right: 310px;
+    margin-right: 305px;
+    margin-top: 5px;
     float: right;
     margin-top: 20px;
     box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+
+    background-image: url("card_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .bottom{
@@ -262,8 +391,48 @@ p{
     border-top-right-radius: 20px; */
 }
 
+.sayak img{
+    border-width: 30px;
+    width: 200px;
+    height: auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 20% 10%;
+    border-radius: 50%;
+}
 
+.sayak h4{
+    padding: 0px 30px 0px 30px;
+    font-size: 2em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: #20696f;
+}
 
+.sayak h5{
+    padding: 10px 30px 0px 30px;
+    font-size: 1em;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin: 0px;
+    color: grey;
+}
+
+.border{
+    margin-bottom: 20px;
+    border-radius: 50%;
+    /* background: #20696f; */
+    background: rgb(32,105,111);
+    background: linear-gradient(0deg, rgba(32,105,111,1) 0%, rgba(50,181,189,1) 49%, rgba(32,105,111,1) 99%);
+    width: 220px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 
 
 .svg1 {
