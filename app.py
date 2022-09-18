@@ -74,7 +74,7 @@ def dashboard():
     uid = current_user.uid
     name = current_user.name
     email = current_user.email
-    return render_template('dashboard.html', cids=cid, titles=title, timestamps=timestamp, zipped_data=zip(title, timestamp, cid), name=name, email=email, uid=uid)
+    return render_template('dashboard-new.html', cids=cid, titles=title, timestamps=timestamp, zipped_data=zip(title, timestamp, cid), name=name, email=email, uid=uid)
 
 @app.route('/logout', methods=["GET", "POST"])
 @login_required

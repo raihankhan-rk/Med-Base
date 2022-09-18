@@ -13,23 +13,20 @@
 
 </head>
 <body>
-    <div>
-        <svg viewBox="0 0 500 500" class="svg1"
-
-            preserveAspectRatio="xMinYMin meet" class="gradient">
-
-            <path d="M0, 200 C210, 300 260,
-                0 600, 90 L500, 00 L0, 0 Z"
-                style="stroke:none;" class="gradient" fill="#113F67">
-            </path>
-        </svg>
-        </div>
-        <div>
+  <div>
+    <svg viewBox="0 0 500 500" class="svg1" preserveAspectRatio="xMinYMin meet" class="gradient">
+         <path d="M0, 200 C210, 300 250,
+            0 600, 100 L500, 00 L0, 0 Z"
+            style="stroke:none;" class="gradient" fill="#07646b">
+        </path>
+    </svg>
+    </div>
+        <!-- <div>
         <svg viewBox="0 0 500 500" style="z-index: -2;" preserveAspectRatio="xMinYMin meet" class="svg2">
 
             <path d="M0, 250 C230, 275 270,
                 0 650, 120 L550, 00 L0, 0 Z"
-                style="stroke:none;" class="gradient" fill="#226597">
+                style="stroke:none;" class="gradient" fill="#52d4b4">
             </path>
         </svg>
 
@@ -40,25 +37,25 @@
 
               <path d="M0, 270 C240, 270 300,
                   0 650, 150 L550, 00 L0, 0 Z"
-                  style="stroke:none;" class="gradient" fill="#92c3f0">
+                  style="stroke:none;" class="gradient" fill="#ffec70">
               </path>
           </svg>
 
-          </div>
+          </div> -->
 
 <div class="taskbar"></div>
 
 <div class="card">
         <div class="top">
-          <h2 class="name">Chinnaswami Iyer</h2>
+          <h2 class="name">{{name}}</h2>
           <img class="circle-img"
             src="https://cdn-icons-png.flaticon.com/512/219/219986.png"
             alt="avatar_img"
           />
 </div>
         <div class="bottom">
-          <p class="info">XXXX XXXX XXXX</p>
-          <p class="info">+91 8961675822</p>
+          <p class="info">{{uid}}</p>
+          <p class="info">{{email}}</p>
         </div>
 </div>
 <section class="section">
@@ -70,8 +67,8 @@
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
       <thead>
-        <form action="/upload" method="post" enctype="multipart/form-data ">
-          <input type="file" class="shit" name="file" vale="">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <input type="file" class="shit" name="file" >
           <input type="submit" value="Upload">
           <div class="bg"></div>
         </form>
@@ -91,7 +88,7 @@
         <tr>
           <td>{{title}}</td>
           <td>{{timestamp}}</td>
-          <td><button class="cid">Show</button><button class="cid">Download</button></td>
+          <<td><button class="cid"><a href="https://dweb.link/ipfs/{{cid}}">View</a></button><button class="cid"><a href="https://dweb.link/ipfs/{{cid}}?filename={{title}}&download=true">Download</a></button></td>
         </tr>
       {% endfor %}
       </tbody>
@@ -99,7 +96,7 @@
   </div>
 </section>
 
-<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+<!-- <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
 <div class="container2">
 
   <div class="calendar-container">
@@ -111,10 +108,10 @@
 
     </header>
 
- </div>    <!-- end calendar-container -->
+ </div>    end calendar-container -->
 
-</div> <!-- end container -->
-<script>
+</div>
+<!-- <script>
   function showDate(){
     var date = new Date();
     var d = date.getDate();
@@ -165,7 +162,7 @@
 }
 
 showTime();
-</script>
+</script> -->
 
   <button class="btn-4">
     <a href="{{ url_for('logout') }}" class="logout" >Logout</a>
@@ -177,7 +174,7 @@ showTime();
 
 <style media="screen">
 
-.ring-left,
+/* .ring-left,
 .ring-right {
 	position: absolute;
 	top: 80px;
@@ -200,11 +197,11 @@ showTime();
 	margin: 8px;
 	height: 32px;
 	width: 8px;
-}
+} */
 
 @use postcss-preset-env;
 
-.container2{
+/* .container2{
   position: absolute;
   top: 350px;
   right: 50px;
@@ -220,11 +217,11 @@ showTime();
 
 .calendar-container header {
 	border-radius: 1em;
-	background-color: #1E56A0;
+	background-color: #07646b;
   backdrop-filter: blur(10px);
 	color: #ffffff;
 	padding: 1em 1em;
-}
+} */
 
 #day {
 	font-size: 2.5em;
@@ -238,19 +235,19 @@ showTime();
 
 
 
-.clock {
+/* .clock {
   display: block;
   text-align: justify;
     position: absolute;
     top:505px;
     right: -150px;
     transform: translateX(-50%) translateY(-50%);
-    color: #113F67;
+    color: #07646b;
     font-size: 45px;
     font-family: Orbitron;
     letter-spacing: 7px;
     font-family: 'Montserrat';
-    background-color: rgba(255,255,255, 0.4);
+    background-color: rgba(255,255,255);
     backdrop-filter: blur(15px);
     border-radius: 1em;
     height: 63px;
@@ -261,20 +258,20 @@ showTime();
     box-shadow: 6px 6px 10px rgba(0,0,0,0.5);
 
 
-}
+} */
 
 .head{
-  padding-bottom:20px;
-  font-weight: 400;
-  font-size: 35px;
+  padding:40px;
+  font-weight: 600;
+  font-size: 40px;
 }
 
 .bg{
-  height: 39px;
-  width: 160px;
+  height: 48px;
+  width: 65%;
   background-color: white;
   position: fixed;
-  top: 15px;
+  top: 14px;
   left: 160px;
   z-index: -1;
   border-radius: 5px;
@@ -286,7 +283,7 @@ showTime();
       position: absolute;
       top: 0;
       left: 0;
-      animation: move 1s;
+
       z-index: -1;
   }
 
@@ -296,7 +293,7 @@ showTime();
       position: absolute;
       top: 0;
       left: 0;
-      animation: move2 2s;
+
 
   }
 
@@ -306,24 +303,10 @@ showTime();
       position: absolute;
       top: 0;
       left: 0;
-      animation: move3 2.5s;
+
 
   }
-  @keyframes move2{
-    0%{top: -325px;}
-    10%{top: -325px;}
-    100%{top: 0px;}
-  }
-  @keyframes move3{
-    0%{top: -350px;}
-    10%{top: -350px;}
-    100%{top: 0px;}
-  }
-  @keyframes move{
 
-    0%{top: -300px;}
-    100%{top: 0px;}
-  }
 
 .dash{
   margin-top: 50px;
@@ -347,39 +330,41 @@ showTime();
   cursor: pointer;
   border-radius: 5px;
   font-family: 'Montserrat';
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .shit::file-selector-button{
-  background-color: #226597;
+  background-color: #07646b;
   padding: 16px 32px;
   margin: 10px 30px 0px 10px;
   border-radius: 5px;
   border: #92c3f0;
   color: white;
   font-family: 'Montserrat';
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 
 .shit::file-selector-button:hover{
-  background-color:#4e89b6;
+  background-color:#42c9a7;
 }
 
 
 
 input[type=submit]{
-  background-color: #226597;
+  background-color: #07646b;
   padding: 16px 32px;
   margin-left: 460px;
   border-radius: 5px;
   border: #92c3f0;
   color: white;
   font-family: 'Montserrat';
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 
 input[type=submit]:hover{
   /* background: linear-gradient( to right, #ff512f, #f09819 ); */
-  background-color:#4e89b6;
+  background-color:#42c9a7;
 }
 
 
@@ -397,9 +382,9 @@ table{
 
 }
 .tbl-header{
-  background-color: rgba(255,255,255,0.5);
+  background-color: #c8eae2;
   backdrop-filter: blur(10px);
-  backdrop-filter: blur(3px);
+
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.4);
@@ -408,29 +393,33 @@ table{
   height:300px;
   overflow-x:auto;
   margin-top: 0px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255);
   backdrop-filter: blur(10px);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.4);
 }
+
+hr{
+  border: 0.5px solid #24969e;
+}
 th{
   padding: 20px 15px;
   text-align: center;
-  font-weight: 500;
-  font-size: 12px;
-  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  color: #07646b;
   text-transform: uppercase;
-
+  border-bottom: solid 1px #24969e;
 }
 td{
-  padding: 15px;
+  padding: 7px;
   text-align: center;
   vertical-align:middle;
   font-weight: 300;
-  font-size: 12px;
-  color: #fff;
-  border-bottom: solid 1px rgba(255,255,255,0.5);
+  font-size: 14px;
+  color: black;
+  border-bottom: solid 1px #24969e;
 
 }
 
@@ -440,9 +429,9 @@ td{
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 body{
     margin: 0px;
-  background-color: #d8ebff;
+  background-color: #e6feff;
   font-family: 'Montserrat';
-  overflow-y: hidden;
+
 }
 
 .background{width: 430px;
@@ -454,36 +443,21 @@ body{
 }
 
 
-.shape:first-child {
-    background: linear-gradient( #1845ad, #23a2f6 );
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
-    margin-left: 295px;
-    margin-top: -102px;
-}
 
-.shape:last-child {
-    background: linear-gradient( to right, #ff512f, #f09819 );
-    margin-right: -327px;
-    margin-bottom: 200px;
-    width: 150px;
-    height: 150px;
-    border-radius: 75px;
-}
 
 .card {
-    border: white 1px solid;
+    border: #07646b 1px solid;
     border-radius: 25px;
     position: absolute;
-    top: 85px;
+    top: 200px;
     right: 73px;
     /* padding: 25px 15px; */
-    background-color: rgba(211, 211, 211, 0.2);
-    backdrop-filter: blur(4px);
+    background-color: rgba(228, 228, 228, 0.3);
+    backdrop-filter: blur(8px);
     margin: 50px 0;
     height: 200px;
     width: 350px;
+    font-weight: 200;
     text-align: left;
     align: center;
     box-shadow: 1.5px 2px 4px rgb(48 48 48);
@@ -495,11 +469,11 @@ body{
 
 
 .top {
-
+  font-size: 14px;
   border-radius: 25px 25px 0 0;
   height: 90px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(7, 100, 107, 0.3);
   backdrop-filter: blur(2px);
   position: relative;
   top: -31px;
@@ -508,7 +482,7 @@ body{
 }
 .name {
   font-size: 20px;
-  color: #ffffff;
+  color: #00494f;
   margin: 9% 20px 0;
   padding-top: 30px;
   position: relative;
@@ -517,7 +491,7 @@ body{
 }
 .circle-img {
   border-radius: 50%;
-  border: 7px solid #fff;
+  border: 7px solid #07646b;
   position: relative;
   left: 210px;
   bottom: 25px;
@@ -531,9 +505,9 @@ body{
 }
 
 .info {
-
+  font-weight: 200;
   margin: 20px 0;
-  color: #ffffff;
+  color: #07646b;
 }
 
 section{
@@ -544,8 +518,8 @@ section{
   background-color: rgb(255, 0, 0);
     color: #fff;
 display:flex;
-justify-content: center;
-display: block;
+
+
 margin: 100px auto ;
   line-height: 42px;
   padding: 7px 25px 7px 25px;
@@ -671,7 +645,7 @@ button {
 }
 
 .cid{
-  background-color: #71abe1;
+  background-color: #28c19b;
   border: none;
   color: white;
   padding: 10px 25px;
@@ -687,7 +661,7 @@ button {
 }
 
 .cid:hover{
-  background-color: #2876b2;
+  background-color: #07646b;
 }
 
 
