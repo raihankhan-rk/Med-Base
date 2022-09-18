@@ -88,8 +88,8 @@
     height: 250px;
     border-radius: 50%;
     position: absolute;
-    top: 100px;
-    right: 100px;
+    top: 150px;
+    right: 150px;
     filter: blur(60px);
 }
 
